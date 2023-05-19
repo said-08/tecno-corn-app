@@ -10,6 +10,7 @@ const CustomInput = ({value, setValue, placeholder, security, icon}) => {
         placeholder={`Enter your ${placeholder}`} 
         style={styles.input}
         secureTextEntry={security}
+        mode="flat"
       >
       </TextInput>
     </View>
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
     marginVertical: 5,
   },
   input: {
-    height: 50
+    height: 50,
   }
 })
 
