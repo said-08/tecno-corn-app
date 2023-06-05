@@ -5,6 +5,7 @@ import Home from "../screens/Home";
 import Details from "../screens_seconds/Details";
 import Favourite from '../screens_seconds/Favourite';
 import Profaile from '../screens_seconds/Profaile';
+import Discussion from '../src/components/Discussion';
 import { Image } from 'react-native';
 
 const Tab = createBottomTabNavigator();
@@ -79,7 +80,8 @@ const HomeStackNavigator = ()=>{
     return(
         <Stack.Navigator >
             <Stack.Screen options={{ headerShown: false }}  name='casa' component={BottomTapNavigator} />
-            <Stack.Screen name='Details' component={Details} /> 
+            <Stack.Screen options={{ headerShown: false }} name='Discussion' component={Discussion}/>
+            <Stack.Screen options={{ headerShown: false }}  name='Details' component={Details} /> 
         </Stack.Navigator>
     )
 }
