@@ -1,3 +1,4 @@
+
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import logo from '../assets/logo1.png'
@@ -166,7 +167,7 @@ const SECTIONS = [
       },
       {
         key: '4',
-        text: 'Valentina',
+        text: 'Item text 4',
         uri: 'https://picsum.photos/id/1035/200',
       },
       {
