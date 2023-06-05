@@ -8,6 +8,7 @@ const App = () => {
       <Navigation/>
     </SafeAreaView>
   );
+
 }
 
 const styles = StyleSheet.create({
