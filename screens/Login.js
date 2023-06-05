@@ -49,7 +49,7 @@ const Login = () => {
 
   const onLogInPress = () => {
     console.warn("sfjaiaosdoa");
-    navigation.navigate("Home");
+    navigation.navigate("HomeStack");
   };
 
   const onForgotPassPress = () => {

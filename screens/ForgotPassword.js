@@ -14,7 +14,6 @@ import CustomButton from "../components/CustomButton";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { BlurView } from "expo-blur";
-import SocialMediaButtons from "../components/SocialMediaButtons";
 import { useNavigation } from "@react-navigation/native";
 
 const ForgotPassword = () => {
