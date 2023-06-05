@@ -11,7 +11,7 @@ const Sent = ({ message }) => {
             >
                 <Text style={styles.text}>{message}</Text>
             </LinearGradient>
-            <Text style={styles.duration}>12:34 AM</Text>
+            <Text style={styles.duration}>12:09 PM</Text>
         </View>
 
     )

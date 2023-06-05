@@ -58,7 +58,7 @@ const BottomTapNavigator = () =>{
                     tabBarLabel:"",
                     tabBarIcon:({color, size}) => (
                         <Image
-                            source={require("../img/person.png")}
+                            source={require("../img/sda.png")}
                             style={{height:25, width:30}}
                         />
                     )
