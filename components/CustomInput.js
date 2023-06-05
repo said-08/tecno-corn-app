@@ -3,7 +3,7 @@ import React from 'react'
 
 const CustomInput = ({value, setValue, placeholder, security, icon}) => {
   return (
-    <View style={styles.container}>
+    <View>
       <TextInput
         value={value}
         onChangeText={setValue}
@@ -18,17 +18,17 @@ const CustomInput = ({value, setValue, placeholder, security, icon}) => {
 }
 
 const styles = StyleSheet.create({
-  container:{
-    backgroundColor: 'white',
-    width: '100%',
-    borderRadius: 5,
+  
+  input: {
+    height: 50,
+    backgroundColor: 'transparent',
+    width: 250,
+    borderRadius: 10,
     borderWidth: 1,
     borderColor: "#e8e8e8",
     paddingHorizontal: 10,
     marginVertical: 5,
-  },
-  input: {
-    height: 50,
+    color: 'white',
   }
 })
 

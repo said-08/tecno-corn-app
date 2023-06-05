@@ -7,24 +7,17 @@ import {
   ImageBackground,
   ScrollView,
 } from "react-native";
-import React, { useCallback, useEffect, useState } from "react";
-import logo from "../assets/logo1.png";
-import logo2 from "../assets/logo2.png";
+import React, { useCallback, useEffect, useState, Component } from "react";
 import compost from "../assets/compost.jpg";
 import CustomInput from "../components/CustomInput";
 import CustomButton from "../components/CustomButton";
 import { useFonts } from "expo-font";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { Feather } from '@expo/vector-icons';
-import { FontAwesome } from '@expo/vector-icons';
 import * as SplashScreen from "expo-splash-screen";
-// import { ScrollView } from 'react-native-gesture-handler'
 import { BlurView } from "expo-blur";
-import { useNavigation } from "@react-navigation/native";
 import SocialMediaButtons from "../components/SocialMediaButtons";
+import { useNavigation } from "@react-navigation/native";
 
-const Login = () => {
-  const { height } = useWindowDimensions();
+const ConfirmEmail = () => {
   const [fontsLoaded] = useFonts({
     Quicksand: require("../assets/fonts/Quicksand-Bold.ttf"),
   });
@@ -45,19 +38,13 @@ const Login = () => {
   }, [fontsLoaded]);
 
   const [username, setUsername] = useState("");
-  const [password, setpassword] = useState("");
 
-  const onLogInPress = () => {
-    console.warn("sfjaiaosdoa");
-    navigation.navigate("Home");
+  const onConfirm = () => {
+    console.warn("Send new Pass");
   };
 
-  const onForgotPassPress = () => {
-    navigation.navigate("ForgotPassword");
-  };
-
-  const onRegisterPress = () => {
-    navigation.navigate("Register");
+  const onSignInPress = () => {
+    navigation.navigate("Login");
   }
 
   if (!fontsLoaded) return null;
@@ -65,15 +52,6 @@ const Login = () => {
   return (
     <View style={styles.root} onLayout={onLayout}>
       <Image style={[styles.image, StyleSheet.absoluteFill]} source={compost} />
-      <View
-        style={{
-          width: 150,
-          height: 150,
-          backgroundColor: "#52734D",
-          position: "absolute",
-          // borderRadius: "50%",
-        }}
-      ></View>
       <ScrollView
         contentContainerStyle={{
           flex: 1,
@@ -83,46 +61,45 @@ const Login = () => {
           justifyContent: "center",
         }}
       >
-        <BlurView intensity={100} style={{borderRadius: 10}}>
+        <BlurView
+          blurType="light"
+          blurAmount={90}
+          reducedTransparencyFallbackColor="white"
+          style={{ borderRadius: 10 }}
+        >
           <View style={styles.login}>
-            <Image
-              source={logo}
-              style={[styles.logo, { height: height * 0.3 }]}
-              resizeMode="contain"
-            />
+            <Text style={styles.title}>Reset your password</Text>
 
-            {/* <Text
+            <Text
               style={{
                 fontFamily: "Quicksand",
                 color: "white",
                 fontSize: 30,
-                marginBottom: 20,
+                marginBottom: 50,
                 letterSpacing: 7,
               }}
             >
               TecnoCorn
-            </Text> */}
+            </Text>
             <CustomInput
-              placeholder={"Username or email"}
+              placeholder={"Username"}
               value={username}
               setValue={setUsername}
             />
+
             <CustomInput
-              placeholder={"Password"}
-              value={password}
-              setValue={setpassword}
-              security={true}
-            />
-            <CustomButton text={"Log In"} onPress={onLogInPress} />
-            <CustomButton
-              text={"Forgot Password"}
-              onPress={onForgotPassPress}
-              type="TERTIARY"
+              placeholder={"Enter your confirmation code"}
+              value={username}
+              setValue={setUsername}
             />
 
-            <Text style={styles.texty} onPress={onRegisterPress}>Don't have an account? create one</Text>
+            <CustomButton text={"Confirm"} onPress={onConfirm} />
 
-            <SocialMediaButtons/>
+            <CustomButton text={"Resend code"} onPress={onSendPress} />
+
+            <Text style={styles.texty} onPress={onSignInPress}>
+              Back to Sign in
+            </Text>
           </View>
         </BlurView>
       </ScrollView>
@@ -145,24 +122,31 @@ const styles = StyleSheet.create({
     padding: 10,
     alignItems: "center",
   },
-  logo: {
-    width: "50%",
-    maxWidth: 300,
-    maxHeight: 200,
-  },
   image: {
     width: "100%",
     height: "100%",
     resizeMode: "cover",
   },
   button: {
-    width: 100,
-    marginHorizontal: 5,
+    height: "30%",
+    marginHorizontal: "50%",
   },
   parentView: {
     flex: 1,
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
+  },
+  title: {
+    fontSize: 24,
+    color: "#051C60",
+    margin: 10,
+  },
+  text: {
+    fontSize: 10,
+    color: 'white',
+    marginVertical: 10,
+    marginHorizontal: 25,
+    textAlign: 'center',
   },
   texty: {
     fontSize: 10,
@@ -173,4 +157,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Login;
+export default ConfirmEmail;
