@@ -1,12 +1,20 @@
-// import LandingScreen from './components/auth/Landing'
-// import Landing from './components/auth/Landing';
-import { NavigationContainer } from '@react-navigation/native';
-import AuthStack from './components/auth/AuthStack';
+import { SafeAreaView, StyleSheet } from 'react-native';
+import Navigation from './navigation';
+import React from 'react';
 
-export default function App() {
+const App = () => {
   return (
-    <NavigationContainer>
-      <AuthStack/>
-    </NavigationContainer>
+    <SafeAreaView style={styles.root}>
+      <Navigation/>
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  root: {
+    flex: 1,
+    backgroundColor: '#F9FBFC',
+  }
+})
+
+export default App;
